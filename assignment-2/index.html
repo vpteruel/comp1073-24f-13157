@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment 2</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sixtyfour+Convergence&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+
+        #container {
+            width: fit-content;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            
+            font-size: larger;
+            font-family: "Sixtyfour Convergence", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 600;
+            font-style: normal;
+            font-variation-settings:
+                "BLED" 0,
+                "SCAN" 0,
+                "XELA" 0,
+                "YELA" 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+    </div>
+
+    <script>
+        function appendTime() {
+            const container = document.getElementById('container');
+            
+            /*
+            I decided to use two arrays for the auspicious control,
+            so I don't have to create many ifs or one if with many conditions
+            */
+            const auspicious = [
+                '01:01', '02:02', '03:03', '04:04', '05:05', '06:06', '07:07',
+                '08:08', '09:09', '10:10', '12:12', '13:13', '14:14', '15:15',
+                '16:16', '17:17', '18:18', '19:19', '20:20', '21:21', '23:23'
+            ];
+            const mostAuspicious = [
+                '11:11', '22:22'
+            ];
+            
+            // outer loop for hours (00 to 23)
+            for (let hours = 0; hours < 24; hours++) {
+                
+                // inner loop for minutes (00 to 59)
+                for (let minutes = 0; minutes < 60; minutes++) {
+
+                    // format hours and minutes as HH:MM
+                    let formattedTime = 
+                        String(hours).padStart(2, '0') + ':' + String(minutes).padStart(2, '0'); // I use the padStart to fill with 0
+
+                    // checks if the format value exists in an auspicious array
+                    if (auspicious.includes(formattedTime))
+                        formattedTime += ' Auspicious';
+
+                    // checks if the format value exists in an mostAuspicious array
+                    if (mostAuspicious.includes(formattedTime))
+                        formattedTime += ' Most Auspicious *****';
+
+                    // append the time to the container
+                    const timeElement = document.createElement('div');
+                    timeElement.textContent = formattedTime;
+                    container.appendChild(timeElement);
+
+                    // for testing
+                    // console.log(formattedTime);
+                }
+
+                // skip a line between the hours
+                container.appendChild(document.createElement('br'));
+            }
+        }
+
+        // append the appendTime function in onload function of window (page loads)
+        window.onload = appendTime;
+    </script>
+</body>
+</html>
