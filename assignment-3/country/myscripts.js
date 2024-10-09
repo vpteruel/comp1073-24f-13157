@@ -1,3 +1,9 @@
+/*
+Name: Vinicius Teruel
+Student ID: 200587844
+Email: 200587844@student.georgianc.on.ca
+ */
+
 function showCountryInfo() {
     const selectedCountry = document.getElementById("country-select").value;
 

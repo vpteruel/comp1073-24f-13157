@@ -1,3 +1,9 @@
+/*
+Name: Vinicius Teruel
+Student ID: 200587844
+Email: 200587844@student.georgianc.on.ca
+ */
+
 function showCounterHit() {
     const counterId = document.getElementById("counter-id").value;
 
