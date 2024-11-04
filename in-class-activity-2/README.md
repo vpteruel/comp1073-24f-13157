@@ -1,1 +1,1 @@
-![Screenshot](Screenshot From 2024-11-04 17-39-17.png?raw=true "Screenshot")
+![Screenshot](./Screenshot%20From%202024-11-04%2017-39-17.png)
