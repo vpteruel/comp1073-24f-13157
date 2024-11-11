@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Registration</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .message {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <h2>User Registration</h2>
+        <form id="registrationForm">
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" class="form-control" id="email" placeholder="Enter email" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" class="form-control" id="password" placeholder="Enter password" required>
+            </div>
+            <div class="form-group">
+                <label for="confirmPassword">Confirm Password:</label>
+                <input type="password" class="form-control" id="confirmPassword" placeholder="Confirm password" required>
+            </div>
+            <button type="submit" class="btn btn-primary" onclick="send">Submit</button>
+        </form>
+        <div class="message" id="message"></div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        document.getElementById("registrationForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            const email = document.getElementById("email").value.trim();
+            const password = document.getElementById("password").value.trim();
+            const confirmPassword = document.getElementById("confirmPassword").value.trim();
+            const messageDiv = document.getElementById("message");
+
+            // check if email ends with ilac.com
+            if (!email.endsWith("@ilac.com")) {
+                messageDiv.innerHTML = "Check given email.";
+                messageDiv.classList.add("text-danger");
+                messageDiv.classList.remove("text-success");
+                return;
+            }
+
+            // check if password and confirm password match
+            if (password !== confirmPassword) {
+                messageDiv.innerHTML = "Check password.";
+                messageDiv.classList.add("text-danger");
+                messageDiv.classList.remove("text-success");
+                return;
+            }
+
+            // if validations pass
+            messageDiv.innerHTML = "User registered.";
+            messageDiv.classList.add("text-success");
+            messageDiv.classList.remove("text-danger");
+        });
+    </script>
+</body>
+</html>
