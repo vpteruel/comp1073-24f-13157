@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Search</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .movie {
+            display: flex;
+            align-items: center;
+            margin-top: 20px;
+        }
+        .movie img {
+            max-width: 250px;
+            margin-right: 20px;
+        }
+        .movie-details {
+            max-width: 600px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="my-4">Movie Search</h1>
+        <div class="input-group mb-3">
+            <input type="text" id="searchInput" class="form-control" placeholder="Enter movie title" autofocus>
+            <div class="input-group-append">
+                <button class="btn btn-primary" onclick="searchMovie()">Search</button>
+            </div>
+        </div>
+        <div id="errorContainer" class="alert alert-danger" role="alert" style="display: none;"></div>
+        <div id="movieContainer" class="card" style="display: none;">
+            <div class="row no-gutters">
+                <div class="col-md-4">
+                    <img id="moviePoster" src="" class="card-img" alt="Movie Poster">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h2 id="movieTitle" class="card-title"></h2>
+                        <table class="table">
+                            <tr>
+                                <th>Genre</th>
+                                <td id="movieGenre"></td>
+                            </tr>
+                            <tr>
+                                <th>Director</th>
+                                <td id="movieDirector"></td>
+                            </tr>
+                            <tr>
+                                <th>Actors</th>
+                                <td id="movieActors"></td>
+                            </tr>
+                            <tr>
+                                <th>Plot</th>
+                                <td id="moviePlot"></td>
+                            </tr>
+                            <tr>
+                                <th>Language</th>
+                                <td id="movieLanguage"></td>
+                            </tr>
+                            <tr>
+                                <th>Country</th>
+                                <td id="movieCountry"></td>
+                            </tr>
+                            <tr>
+                                <th>Awards</th>
+                                <td id="movieAwards"></td>
+                            </tr>
+                            <tr>
+                                <th>IMDB Rating</th>
+                                <td id="movieRating"></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
