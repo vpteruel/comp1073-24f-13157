@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 35</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    
+    <div class="container mt-5">
+        <h2>Task 35: Dynamic Dropdown</h2>
+        <ul>
+            <ol>1. Add a dropdown menu for selecting a category.</ol>
+            <ol>2. Dynamically populate a second dropdown with subcategories based on the first selection.</ol>
+        </ul>
+
+        <div class="form-group">
+            <label for="category">Category:</label>
+            <select id="category" class="form-control" onchange="populateSubcategories()">
+                <option value="">Select a category</option>
+                <option value="fruits">Fruits</option>
+                <option value="vegetables">Vegetables</option>
+                <option value="dairy">Dairy</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="subcategory">Subcategory:</label>
+            <select id="subcategory" class="form-control">
+                <option value="">Select a subcategory</option>
+            </select>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
