@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency Converter</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="container mt-5">
+        <h1>Currency Converter</h1>
+
+        <div class="row mt-3">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="sourceCurrency">Source Currency:</label>
+                    <select id="sourceCurrency" class="form-control"></select>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="targetCurrency">Target Currency:</label>
+                    <select id="targetCurrency" class="form-control"></select>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-3">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="amount">Amount:</label>
+                    <input type="number" id="amount" class="form-control" placeholder="Enter amount">
+                </div>
+            </div>
+            <div class="col-md-6 d-flex align-items-end">
+                <button id="convert" class="btn btn-primary mb-3">Convert</button>
+            </div>
+        </div>
+
+        <div class="row mt-3">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="result">Result:</label>
+                    <input type="text" id="result" class="form-control" readonly>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="selectedRate">Selected Rate:</label>
+                    <input type="text" id="selectedRate" class="form-control" readonly>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group mt-3">
+            <label for="exchangeRates">Exchange Rates:</label>
+            <ul id="exchangeRates" class="list-group">
+                <!-- Exchange rates will be populated here -->
+            </ul>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>
